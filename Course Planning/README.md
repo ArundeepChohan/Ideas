@@ -1,2 +1,2 @@
 
-Just an Idea for an application for Langara College.
+Just an idea for an application for Langara College.
