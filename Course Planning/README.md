@@ -10,7 +10,7 @@ The concept would be is to make a binary tree of each subject like CPSC, Math an
 
 ![Screenshot](https://github.com/achohan01/Ideas/blob/master/Course%20Planning/CourseSchedule.png)
 
-![Screenshot](https://github.com/achohan01/Ideas/blob/master/Course%20Planning/ListOfCourseSchedule.png)
+![Screenshot](https://github.com/achohan01/Ideas/blob/master/Course%20Planning/ListofCourseSchedule.png)
 
 It can be improved if you create your own database of the prerequisites.
 
