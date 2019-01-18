@@ -4,7 +4,7 @@ The concept would be is to make a binary tree of each subject like CPSC, Math an
 
 ![Screenshot](https://github.com/achohan01/Ideas/blob/master/Course%20Planning/LangaraProgramDetail.png)
 
-![Screenshot](https://github.com/achohan01/Ideas/blob/master/Course%20Planning/Unofficial Transcript.png)
+![Screenshot](https://github.com/achohan01/Ideas/blob/master/Course%20Planning/UnofficialTranscript.png)
 
 ![Screenshot](https://github.com/achohan01/Ideas/blob/master/Course%20Planning/CourseList.png)
 
