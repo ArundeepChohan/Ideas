@@ -1,5 +1,6 @@
 	function measure(pt)
-	{  // generally used geo measurement function
+	{  
+		// generally used geo measurement function
 		var R = 6378.137; // Radius of earth in KM
 		var dLat = pt.geometry.location.lat() * Math.PI / 180 - latLng.lat() * Math.PI / 180;
 		var dLon = pt.geometry.location.lng()* Math.PI / 180 - latLng.lng() * Math.PI / 180;
