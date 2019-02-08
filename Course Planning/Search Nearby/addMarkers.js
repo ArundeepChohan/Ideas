@@ -49,7 +49,7 @@ https://developers.google.com/maps/documentation/javascript/examples/marker-remo
 	// Removes the markers from the map, but keeps them in the array.
 	function clearMarkers() 
 	{
-       	 setMapOnAll(null);
+       	 	setMapOnAll(null);
     	};
 	
 	function setMapOnAll(map)
