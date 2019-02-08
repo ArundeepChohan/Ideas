@@ -4,7 +4,6 @@ https://developers.google.com/maps/documentation/javascript/examples/marker-remo
 
 	function addMarker(latLng) 
 	{
-    
 		marker = new google.maps.Marker
 		({
 			position: latLng,
@@ -45,34 +44,35 @@ https://developers.google.com/maps/documentation/javascript/examples/marker-remo
 		marker.circle2 = circle2;
 		markers.push(marker);
 	
- };
+ 	};
+
 	// Removes the markers from the map, but keeps them in the array.
 	function clearMarkers() 
 	{
-        setMapOnAll(null);
-    };
+       	 setMapOnAll(null);
+    	};
 	
 	function setMapOnAll(map)
 	{
-        for (var i = 0; i < markers.length; i++) 
+       		for (var i = 0; i < markers.length; i++) 
 		{
 			markers[i].setMap(map);
 			markers[i].circle1.unbindAll();
 			markers[i].circle1.setMap(null);
 			markers[i].circle2.unbindAll();
 			markers[i].circle2.setMap(null);
-        }
-    };
+       		}
+    	};
 	
 	function showMarkers() 
 	{
 		setMapOnAll(map);
-    };
+    	};
 
       // Deletes all markers in the array by removing references to them.
 	function deleteMarkers() 
 	{
 		clearMarkers();
-        markers = [];
-    };
+        	markers = [];
+    	};
 	  
