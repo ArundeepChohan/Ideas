@@ -9,7 +9,8 @@
 ></script>
 
 <script type="text/javascript">
-var geocoder = new google.maps.Geocoder();
+var geocoder=null;
+geocoder = new google.maps.Geocoder();
 var latLng = new google.maps.LatLng(49.246292, -123.116226), map, marker, request,infowindow;
 var points1 = [], heatmap1, pointArray = [], markers = [], places = [];
 var time = 1, speed = 1.4, radius1=(((speed * time) *3600)/2), radius2=((speed * time) *3600);
