@@ -7,7 +7,7 @@ Prerequisites: Able to run HTML pages.
 Installing: Download entire folders and click index.html to run.
 
 Built With: 
-HTML, CSS and Javascript - Front end. 
+HTML and Javascript - Front end. 
 API - Google Map.
 
 Authors: Arundeep Chohan
