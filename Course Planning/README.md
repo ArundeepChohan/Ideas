@@ -17,4 +17,4 @@ It can be improved if you create your own database of the prerequisites.
 Uses: Google Api with a key.
 
 Useful if I want to add day planning or travel time around my area.
-![Screenshot](https://github.com/ArundeepChohan/Summary/blob/master/AddedSearchType.png)
+![Screenshot](https://github.com/ArundeepChohan/Summary/blob/master/GoogleApi.png)
