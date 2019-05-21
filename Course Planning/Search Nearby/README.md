@@ -1,6 +1,8 @@
+# Search Nearby
+
 ![Screenshot](https://github.com/ArundeepChohan/Summary/blob/master/GoogleApi.png)
 
-Search Nearby: To find stores nearby using the Google Api.
+To find stores nearby using the Google Api.
 
 Prerequisites: Able to run HTML pages.
 
