@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDRf4yjDDVgicST709IENt-5SP6z8JUi8k&libraries=visualization,geometry,places"
+		></script>
+		<script src="Merc.js">
+		</script>
+		
+	<script type="text/javascript">
+	
+	// Removes the markers from the map, but keeps them in the array.
+	function clearMarkers() 
+	{
+        	setMapOnAll(null);
+    	};
+	
+	function setMapOnAll(map)
+	{
+        	for (var i = 0; i < markers.length; i++) 
+		{
+			markers[i].setMap(map);
+			markers[i].circle1.unbindAll();
+			markers[i].circle1.setMap(null);
+			markers[i].circle2.unbindAll();
+			markers[i].circle2.setMap(null);
+        	}
+   	};	
+	
+	function showMarkers() 
+	{
+		setMapOnAll(map);
+    	};
+
+     	// Deletes all markers in the array by removing references to them.
+	function deleteMarkers() 
+	{
+		clearMarkers();
+        	markers = [];
+    	};
+
+	</script>
+	<script type="text/javascript">
+	
+	/*
+	https://developers.google.com/maps/documentation/javascript/examples/place-search
+	*/
+
+	function callback(results, status) 
+	{
+		deletePlaces();
+		if (status == google.maps.places.PlacesServiceStatus.OK) 
+		{
+			for (var i = 0; i < results.length; i++)
+			{
+				place = results[i];
+				//console.log(place.geometry.location);
+				//console.log(place.geometry.location.lat);
+				//console.log(place.geometry.location.lat());
+				//console.log(place.geometry.location.lng);
+				//console.log(place.geometry.location.lng());
+				d = measure(place);
+
+				if(d<radius2)
+				{	
+					createMarker(place);
+				}
+			}
+		}
+	};
+
+	function deletePlaces()
+	{
+		setPlaces(null);
+	    	places = [];
+	};
+
+	function setPlaces(map)
+	{
+	    	for (var i = 0; i < places.length; i++) 
+		{
+			places[i].setMap(map);
+	   	 }
+	};
+
+	function createMarker(place) 
+	{
+	    	placeLoc = place.geometry.location;
+		symbol = { 
+			url: place.icon,
+			scaledSize: new google.maps.Size(25, 25), // scaled size
+		};
+
+		spot = new google.maps.Marker
+		({
+			map: map,
+			position: placeLoc,  
+			icon: symbol,
+	   	 });
+
+		places.push(spot);
+	
+		google.maps.event.addListener(spot, 'click', function() 
+		{
+			infowindow.setContent("<p>"+place.name+"</br>"+place.formatted_address+"</p>");
+			infowindow.open(map, this);
+	    	});
+	
+	}
+	
+	</script>
+		<script src="measure.js"></script>
+		
+		</script>
+		
+		<style>
+		table, td {
+			border: 1px solid black;
+		}
+		</style>
+		<script type="text/javascript">
+		var maps = {};
+		var map;
+		
+		var collectionOfMaps=[];
+		
+		
+		var timeSlots = 2;
+		var geocoder = new google.maps.Geocoder();
+		var latLng = new google.maps.LatLng(49.246292, -123.116226);
+		var markers = [], places = [];
+		var time = 1, speed = 1.4, radius1=(((speed * time) *3600)/8)*timeSlots, radius2=(((speed * time) *3600)/4)*timeSlots;
+		var icon = { 
+			url: 'https://www.shareicon.net/data/32x32/2016/07/21/799560_people_512x512.png',
+			scaledSize: new google.maps.Size(25, 25), // scaled size
+		};
+		
+		function geocodePosition(pos) 
+		{
+			geocoder.geocode({
+				latLng: pos
+			}, function(responses) {
+			if (responses && responses.length > 0) {
+				//updateMarkerAddress(responses[0].formatted_address);
+			} else {
+				//updateMarkerAddress('Cannot determine address at this location.');
+			}
+			});
+		};
+		
+		
+		window.onload = function() 
+		{
+			// 7 x 48 (30 min blocks)
+			// Creates a table with  toggleables => than which does the below.
+			createMap();
+		}
+		function createMap()
+		{
+			// Creates maps based on the length of the column that goes unhindered.
+			timeSlots = 1;
+			
+			document.getElementById("maps").innerHTML="";
+			var setMaps = document.getElementById("maps");
+			
+			for(var i = 0;i < 10;i++)
+			{
+				var div = document.createElement('div');
+				div.id = 'map'+i;
+				div.className = 'maps';
+				div.style.height = '500px';
+				div.style.width = '500px';
+				radius1=(((speed * time) *3600)/8)*timeSlots;
+				radius2=(((speed * time) *3600)/4)*timeSlots;
+				//div.style.background='#000000';
+				setMaps.appendChild(div);
+			}
+			/*
+			Also find me button.
+			As well as dragging.
+			*/
+			setTimeout(initialize,75);
+		}
+		function initialize()
+		{
+			maps = document.getElementsByClassName("maps");
+			var mapId = '';
+			
+			for(var i = 0; i<maps.length; i++) 
+			{
+				mapId = document.getElementById(maps[i].id);
+
+				// Create new Google Map object for each canvas 
+				var options = 
+				{
+					zoom: 20,
+					center: latLng ,
+					mapTypeId: google.maps.MapTypeId.ROADMAP
+				};
+				
+				map = new google.maps.Map(document.getElementById(maps[i].id), options);
+				marker = new google.maps.Marker
+				({
+					position: latLng,
+					title: 'Point A',
+					map: map,
+					icon:icon,
+					draggable: true
+				});
+		
+				// Add circle overlay and bind to marker.
+				// This is where you can visit and come back in 30 mins.
+				circle1	= new google.maps.Circle
+				({
+					map: map,
+					radius: radius1, 
+					strokeColor: '#33cc33',
+					strokeOpacity: 0.4,
+					strokeWeight: 2,	
+					fillOpacity: 0.15,		
+					fillColor: '#33cc33'
+				});
+				circle1.bindTo('center', marker, 'position');
+					
+				// This is the maximum spot you can go in 30 mins.
+				circle2 = new google.maps.Circle
+				({
+					map: map,
+					radius: radius2,
+					strokeColor: '#e67300',
+					strokeOpacity: 0.4,
+					strokeWeight: 2,
+					fillOpacity: 0.15,	
+					fillColor: '#e67300'
+				});
+				circle2.bindTo('center', marker, 'position');
+				
+				marker.circle1 = circle1;
+				marker.circle2 = circle2;
+				markers.push(marker);
+				collectionOfMaps.push(map);
+			}
+			setNearby();
+		}
+		
+		function setNearby()
+		{
+			for(var i =0; i< collectionOfMaps.length;i++)
+			{
+				infowindow = new google.maps.InfoWindow();
+				request = {
+				location: map[i].options.center, 
+				rankBy: google.maps.places.RankBy.DISTANCE,
+				types: ['store'],
+				};
+				service = new google.maps.places.PlacesService(collectionOfMaps[i]);
+				setTimeout(service.textSearch(request, callback),100);
+			}
+		
+		}
+
+		</script>
+	</head>
+	<body>
+		<div id="maps"> </div>
+	</body>
+</html>
