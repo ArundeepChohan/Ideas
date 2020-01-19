@@ -22,10 +22,10 @@ public class LangaraLogin {
 	@BeforeMethod
 	public void BeforeMethod()
 	{
-		System.setProperty("webdriver.chrome.driver", "C:\\chrome\\chromedriver_win32\\chromedriver.exe");
-		driver = new ChromeDriver();
-		driver.manage().window().maximize();
-		String baseurl = "https://swing.langara.bc.ca/prod/twbkwbis.P_WWWLogin";
+	    System.setProperty("webdriver.chrome.driver", "C:\\chrome\\chromedriver_win32\\chromedriver.exe");
+	    driver = new ChromeDriver();
+	    driver.manage().window().maximize();
+	    String baseurl = "https://swing.langara.bc.ca/prod/twbkwbis.P_WWWLogin";
 	    driver.get(baseurl);
 	    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS); 
 	    Login();
@@ -63,25 +63,25 @@ public class LangaraLogin {
 	    String actualUrl,expectedUrl;
 	    WebElement username,password,submitBtn;
 	    //wait = new WebDriverWait(driver,5);
-		//wait.until(ExpectedConditions.visibilityOfElementLocated(By.name("sid")));
-		//<input type="text" name="sid" size="11" maxlength="9" id="UserID">
-		username = driver.findElement(By.name("sid"));
-		//Instead of read just enter your username and password
-		userName = "";
-		username.sendKeys(userName);
-		//wait.until(ExpectedConditions.visibilityOfElementLocated(By.name("PIN")));
-		//<input type="password" name="PIN" size="31" maxlength="30">
-		password = driver.findElement(By.name("PIN"));
-		passWord = "";
-		password.sendKeys(passWord);
-		//<input type="submit" value="Login">	    
-		//wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("input[type='submit']")));
-		submitBtn = driver.findElement(By.cssSelector("input[type='submit']"));
-		submitBtn.click();
-		//Added a bit of checking in case you entered the wrong values
-		actualUrl ="https://swing.langara.bc.ca/prod/twbkwbis.P_GenMenu?"; 
-		expectedUrl = driver.getCurrentUrl();
-		Assert.assertTrue(expectedUrl.contains(actualUrl));
+	    //wait.until(ExpectedConditions.visibilityOfElementLocated(By.name("sid")));
+	    //<input type="text" name="sid" size="11" maxlength="9" id="UserID">
+	    username = driver.findElement(By.name("sid"));
+	    //Instead of read just enter your username and password
+	    userName = "";
+	    username.sendKeys(userName);
+	    //wait.until(ExpectedConditions.visibilityOfElementLocated(By.name("PIN")));
+	    //<input type="password" name="PIN" size="31" maxlength="30">
+	    password = driver.findElement(By.name("PIN"));
+	    passWord = "";
+	    password.sendKeys(passWord);
+	    //<input type="submit" value="Login">	    
+	    //wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("input[type='submit']")));
+	    submitBtn = driver.findElement(By.cssSelector("input[type='submit']"));
+	    submitBtn.click();
+	    //Added a bit of checking in case you entered the wrong values
+	    actualUrl ="https://swing.langara.bc.ca/prod/twbkwbis.P_GenMenu?"; 
+	    expectedUrl = driver.getCurrentUrl();
+	    Assert.assertTrue(expectedUrl.contains(actualUrl));
 	}
 
 	@AfterMethod
