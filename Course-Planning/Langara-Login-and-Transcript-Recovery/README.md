@@ -1,4 +1,4 @@
-# LangaraLogin
+# Langara Login
 
 Jan 17, 2020: Used knowledge from Udemy Courses to create a Selenium + Java login.
 
