@@ -1,5 +1,6 @@
 # Langara Login
 
+Login function of the entire app.
 
 • It allows the user to sign automatically into Langara using Selenium and retrieve their transcript.
 
