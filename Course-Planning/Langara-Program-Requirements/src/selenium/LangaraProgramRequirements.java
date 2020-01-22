@@ -16,7 +16,7 @@ import org.testng.annotations.Test;
 public class LangaraProgramRequirements {
 	WebDriver driver = null;
 	WebDriverWait wait = null;
-    String actualUrl, expectedUrl;
+    	String actualUrl, expectedUrl;
 	String programName = "Computer Science";
 	String degreeName = "Associate of Science Degree in Computer Science";
 	@BeforeClass
@@ -26,11 +26,11 @@ public class LangaraProgramRequirements {
 		driver = new ChromeDriver();  
 		driver.manage().window().maximize();
 		actualUrl = "https://langara.ca/programs-and-courses/index.html"; 
-	    driver.get(actualUrl);
+	    	driver.get(actualUrl);
 		expectedUrl = driver.getCurrentUrl();
 		Assert.assertTrue(expectedUrl.equals(actualUrl));
 		//System.out.println(expectedUrl.equals(actualUrl));
-	    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS); 
+	    	driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS); 
 	}
 	@Test(priority = 1)
 	public void PullRequiredCourses() {
@@ -44,25 +44,25 @@ public class LangaraProgramRequirements {
 		//System.out.println("Am I at the right program requirements: "+h1.getText().equals(programName));
 		// <a class="btn-box-light" href="program-curriculum.html">Program Curriculum</a>
 		WebElement programcurriculum = wait.until(ExpectedConditions.elementToBeClickable(By.linkText("Program Curriculum")));
-	    programcurriculum.click();
-	    //<a class="accordion-title" href="#">Associate of Science Degree in Computer Science</a>
-	    WebElement degreename = wait.until(ExpectedConditions.elementToBeClickable(By.linkText(degreeName)));
-	    degreename.click();
-	    /*
-	    <div class="course-selection-title">All of</div>
-	    <div class="course-group">
-	    <table class="course-details">
-	    <td class="course-number">
-	    <a class="course-toggler"> CPSC 1050
-	    <td class="course-name">
-	    <a class="course-toggler"> Introduction to Computer Science
-	    <td class="course-credit">
-	    <a class="course-toggler"> 3
-	    */
-	    /*So I want to create a list of certain courses.
-	      If it's All : Just insert into a list incrementing each add
-	      If it's Two of: 
-	     */
+	    	programcurriculum.click();
+	    	//<a class="accordion-title" href="#">Associate of Science Degree in Computer Science</a>
+	    	WebElement degreename = wait.until(ExpectedConditions.elementToBeClickable(By.linkText(degreeName)));
+	    	degreename.click();
+	    	/*
+	    	<div class="course-selection-title">All of</div>
+	    	<div class="course-group">
+	    	<table class="course-details">
+	    	<td class="course-number">
+	    	<a class="course-toggler"> CPSC 1050
+	    	<td class="course-name">
+	    	<a class="course-toggler"> Introduction to Computer Science
+	    	<td class="course-credit">
+	    	<a class="course-toggler"> 3
+	    	*/
+	    	/*So I want to create a list of certain courses.
+	      	If it's All : Just insert into a list incrementing each add
+	      	If it's Two of: 
+	     	*/
 	}
 	@AfterClass
 	public void afterClass()
@@ -92,26 +92,22 @@ public class LangaraProgramRequirements {
 	}
 	public class Courses{
 		private int howManyNeedtoPass = 0;
-	    private ArrayList<Course> courses = new ArrayList<Course>();
-	    public Courses(Course c)
-	    {
-	    	courses.add(c);
-	    }
-	    public void IncrementPass(int size)
-	    {
-	    	howManyNeedtoPass+=size;
-	    }
-	    public Object ReturnCourses()
-	    {
-	    	return courses;
-	    }
-	    public int ReturnPassNumber()
-	    {
-	    	return howManyNeedtoPass;
-	    }
-		
-	}
-	
-	 //Would like to pull out the information and store it into a class with Subject, No, Title, Credit, Grade, GPA. 
-
+	    	private ArrayList<Course> courses = new ArrayList<Course>();
+	    	public Courses(Course c)
+	    	{
+	    		courses.add(c);
+	    	}
+	    	public void IncrementPass(int size)
+	    	{
+	    		howManyNeedtoPass+=size;
+	   	}
+	    	public Object ReturnCourses()
+	    	{
+	    		return courses;
+	    	}
+	    	public int ReturnPassNumber()
+	    	{
+	    		return howManyNeedtoPass;
+	    	}		
+	}	 
 }
