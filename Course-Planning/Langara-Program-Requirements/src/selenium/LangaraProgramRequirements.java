@@ -1,6 +1,8 @@
 package selenium;
 
 import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -16,7 +18,7 @@ import org.testng.annotations.Test;
 public class LangaraProgramRequirements {
 	WebDriver driver = null;
 	WebDriverWait wait = null;
-    	String actualUrl, expectedUrl;
+    String actualUrl, expectedUrl;
 	String programName = "Computer Science";
 	String degreeName = "Associate of Science Degree in Computer Science";
 	@BeforeClass
@@ -26,11 +28,11 @@ public class LangaraProgramRequirements {
 		driver = new ChromeDriver();  
 		driver.manage().window().maximize();
 		actualUrl = "https://langara.ca/programs-and-courses/index.html"; 
-	    	driver.get(actualUrl);
+	    driver.get(actualUrl);
 		expectedUrl = driver.getCurrentUrl();
 		Assert.assertTrue(expectedUrl.equals(actualUrl));
 		//System.out.println(expectedUrl.equals(actualUrl));
-	    	driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS); 
+	    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS); 
 	}
 	@Test(priority = 1)
 	public void PullRequiredCourses() {
@@ -41,34 +43,62 @@ public class LangaraProgramRequirements {
 		// /html/body/div[3]/div[3]/div[3]/div/div/div[1]/h1
 		WebElement h1 =  wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/div[3]/div[3]/div[3]/div/div/div[1]/h1")));
 		Assert.assertTrue(h1.getText().equals(programName));
-		//System.out.println("Am I at the right program requirements: "+h1.getText().equals(programName));
+		// System.out.println("Am I at the right program requirements: "+h1.getText().equals(programName));
 		// <a class="btn-box-light" href="program-curriculum.html">Program Curriculum</a>
 		WebElement programcurriculum = wait.until(ExpectedConditions.elementToBeClickable(By.linkText("Program Curriculum")));
-	    	programcurriculum.click();
-	    	//<a class="accordion-title" href="#">Associate of Science Degree in Computer Science</a>
-	    	WebElement degreename = wait.until(ExpectedConditions.elementToBeClickable(By.linkText(degreeName)));
-	    	degreename.click();
-	    	/*
-	    	<div class="course-selection-title">All of</div>
-	    	<div class="course-group">
-	    	<table class="course-details">
-	    	<td class="course-number">
-	    	<a class="course-toggler"> CPSC 1050
-	    	<td class="course-name">
-	    	<a class="course-toggler"> Introduction to Computer Science
-	    	<td class="course-credit">
-	    	<a class="course-toggler"> 3
-	    	*/
-	    	/*So I want to create a list of certain courses.
-	      	If it's All : Just insert into a list incrementing each add
-	      	If it's Two of: 
-	     	*/
+	    programcurriculum.click();
+	    // <a class="accordion-title" href="#">Associate of Science Degree in Computer Science</a>
+	    WebElement degreename = wait.until(ExpectedConditions.elementToBeClickable(By.linkText(degreeName)));
+	    degreename.click();
+	    /*
+	    <div class="course-selection-title">All of</div>
+	    <div class="course-group">
+	    <table class="course-details">
+	    <td class="course-number">
+	    <a class="course-toggler"> CPSC 1050
+	    <td class="course-name">
+	    <a class="course-toggler"> Introduction to Computer Science
+	    <td class="course-credit">
+	    <a class="course-toggler"> 3
+	    */
+	    /*So I want to create a list of certain courses.
+	      If it's All : Just insert into a list incrementing each add
+	      If it's Two of: 
+	     */
+	    
+	    WebElement tableelement = wait.until(ExpectedConditions.visibilityOfElementLocated(By.tagName("table")));
+	    List<WebElement> trs = tableelement.findElements(By.tagName("tr"));
+		for (WebElement row : trs) 
+	    {
+			List<WebElement> listofprogramrequirements = row.findElements(By.className("course-selection-title"));
+			for (WebElement col : listofprogramrequirements) 
+		    {
+				System.out.println(col.getText());
+				List<WebElement> coursenumbers = row.findElements(By.className("course-number")); 
+				if(coursenumbers.size()>0)
+				{
+					Iterator<WebElement> iter = coursenumbers.iterator();
+					// This will check whether list has some element or not
+					while (iter.hasNext()) {
+						WebElement item = iter.next();
+						String label = item.getText();
+						System.out.println(label);
+					}
+				}
+				else
+				{
+					
+				}
+		    }
+	    }
+	   
 	}
 	@AfterClass
 	public void afterClass()
 	{		
-		//driver.quit();	
+		driver.quit();	
 	}
+	/*
 	public class Course{
 		private String subject;
 		private int no;
@@ -92,22 +122,23 @@ public class LangaraProgramRequirements {
 	}
 	public class Courses{
 		private int howManyNeedtoPass = 0;
-	    	private ArrayList<Course> courses = new ArrayList<Course>();
-	    	public Courses(Course c)
-	    	{
-	    		courses.add(c);
-	    	}
-	    	public void IncrementPass(int size)
-	    	{
-	    		howManyNeedtoPass+=size;
-	   	}
-	    	public Object ReturnCourses()
-	    	{
-	    		return courses;
-	    	}
-	    	public int ReturnPassNumber()
-	    	{
-	    		return howManyNeedtoPass;
-	    	}		
-	}	 
+	    private ArrayList<Course> courses = new ArrayList<Course>();
+	    public Courses(Course c)
+	    {
+	    	courses.add(c);
+	    }
+	    public void IncrementPass(int size)
+	    {
+	    	howManyNeedtoPass+=size;
+	    }
+	    public Object ReturnCourses()
+	    {
+	    	return courses;
+	    }
+	    public int ReturnPassNumber()
+	    {
+	    	return howManyNeedtoPass;
+	    }	
+	}
+	*/
 }
