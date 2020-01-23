@@ -70,7 +70,6 @@ public class LangaraLogin {
 	@Test(priority = 2)
 	public void PullTranscripts()
 	{
-		
 		wait = new WebDriverWait(driver,2);
 		//<a href="/prod/twbkwbis.P_GenMenu?name=bmenu.P_StuMainMnu" onmouseover="window.status='Students'; return true" onmouseout="window.status=''; return true" onfocus="window.status='Students'; return true" onblur="window.status=''; return true">Students</a>
 		WebElement students = wait.until(ExpectedConditions.elementToBeClickable(By.linkText("Students")));
