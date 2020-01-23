@@ -19,3 +19,5 @@ Authors: Arundeep Chohan
 Updates Required:  Going to parse the data into a list of course class with variables Subject, No, Title, Credit, Grade, GPA
 
 Jan 21, 2020: Currently only connects to the site which the information is hosted on.
+
+Jan 22, 2020: Parses website data depending on what occurs in the table.
