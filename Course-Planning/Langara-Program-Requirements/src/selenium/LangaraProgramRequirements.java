@@ -35,7 +35,7 @@ public class LangaraProgramRequirements {
 	    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS); 
 	}
 	@Test(priority = 1)
-	public void PullRequiredCourses() {
+	public void NavigateToRequiredCourses() {
 		wait = new WebDriverWait(driver,2);
 		WebElement programname = wait.until(ExpectedConditions.elementToBeClickable(By.linkText(programName)));
 		programname.click();
@@ -50,7 +50,11 @@ public class LangaraProgramRequirements {
 	    // <a class="accordion-title" href="#">Associate of Science Degree in Computer Science</a>
 	    WebElement degreename = wait.until(ExpectedConditions.elementToBeClickable(By.linkText(degreeName)));
 	    degreename.click();
-	    /*
+	}
+	@Test(priority = 2)
+	public void PullRequireCourses()
+	{
+		/*
 	    <div class="course-selection-title">All of</div>
 	    <div class="course-group">
 	    <table class="course-details">
@@ -66,30 +70,37 @@ public class LangaraProgramRequirements {
 	      If it's Two of: 
 	     */
 	    List<WebElement> listofprogramrequirements = driver.findElements(By.className("course-selection-title"));
-	    for (WebElement col: listofprogramrequirements) {
+	    for (WebElement col: listofprogramrequirements)
+	    {
 	        System.out.println(col.getText());
 	        List<WebElement> coursenumbers = col.findElements(By.xpath(".//..//td[@class='course-number']"));
 	    	if(coursenumbers.size()>0)
 			{
-				Iterator<WebElement> iter = coursenumbers.iterator();
-				// This will check whether list has some element or not
-				while (iter.hasNext()) {
-					WebElement item = iter.next();
-					String label = item.getText();
-					System.out.println(label);
-				}
+				PrintWebElements(coursenumbers);
 			}
 			else
 			{
-				
+				//<div class="wysiwyg-content default_program-curriculum">
+				WebElement message = col.findElement(By.xpath(".//..//div[@class='wysiwyg-content default_program-curriculum']"));
+				System.out.println(message.getText());
 			}
 	    }
-	   
 	}
 	@AfterClass
-	public void afterClass()
+	public void AfterClass()
 	{		
 		driver.quit();	
+	}
+	
+	public void PrintWebElements(List<WebElement> listofelements)
+	{
+		Iterator<WebElement> iter = listofelements.iterator();
+		// This will check whether list has some element or not
+		while (iter.hasNext()) {
+			WebElement item = iter.next();
+			String label = item.getText();
+			System.out.println(label);
+		}
 	}
 	/*
 	public class Course{
