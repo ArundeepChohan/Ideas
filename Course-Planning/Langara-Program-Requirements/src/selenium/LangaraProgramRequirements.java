@@ -65,31 +65,24 @@ public class LangaraProgramRequirements {
 	      If it's All : Just insert into a list incrementing each add
 	      If it's Two of: 
 	     */
-	    
-	    WebElement tableelement = wait.until(ExpectedConditions.visibilityOfElementLocated(By.tagName("table")));
-	    List<WebElement> trs = tableelement.findElements(By.tagName("tr"));
-		for (WebElement row : trs) 
-	    {
-			List<WebElement> listofprogramrequirements = row.findElements(By.className("course-selection-title"));
-			for (WebElement col : listofprogramrequirements) 
-		    {
-				System.out.println(col.getText());
-				List<WebElement> coursenumbers = row.findElements(By.className("course-number")); 
-				if(coursenumbers.size()>0)
-				{
-					Iterator<WebElement> iter = coursenumbers.iterator();
-					// This will check whether list has some element or not
-					while (iter.hasNext()) {
-						WebElement item = iter.next();
-						String label = item.getText();
-						System.out.println(label);
-					}
+	    List<WebElement> listofprogramrequirements = driver.findElements(By.className("course-selection-title"));
+	    for (WebElement col: listofprogramrequirements) {
+	        System.out.println(col.getText());
+	        List<WebElement> coursenumbers = col.findElements(By.xpath(".//..//td[@class='course-number']"));
+	    	if(coursenumbers.size()>0)
+			{
+				Iterator<WebElement> iter = coursenumbers.iterator();
+				// This will check whether list has some element or not
+				while (iter.hasNext()) {
+					WebElement item = iter.next();
+					String label = item.getText();
+					System.out.println(label);
 				}
-				else
-				{
-					
-				}
-		    }
+			}
+			else
+			{
+				
+			}
 	    }
 	   
 	}
