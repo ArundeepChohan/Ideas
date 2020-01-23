@@ -68,7 +68,7 @@ public class LangaraLogin {
 	}
 	
 	@Test(priority = 2)
-	public void pullTranscripts()
+	public void PullTranscripts()
 	{
 		
 		wait = new WebDriverWait(driver,2);
