@@ -21,3 +21,5 @@ Updates Required:  Going to parse the data into a list of course class with vari
 Jan 17, 2020: Used knowledge from Udemy Courses to create a Java + Selenium login.
 
 Jan 21, 2020: Updated multiple browser testing.
+
+Jan 25, 2020: Full Browser support.
