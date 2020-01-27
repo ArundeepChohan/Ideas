@@ -36,6 +36,7 @@ public class LangaraLogin {
 			case "firefox":
 				System.setProperty("webdriver.gecko.driver", ".\\BrowserDrivers\\geckodriver-v0.26.0-win32\\geckodriver.exe");
 				driver = new FirefoxDriver();
+				break;
 			case "ie":
 				System.setProperty("webdriver.ie.driver", ".\\BrowserDrivers\\iedriverserver_win32_3.150.1\\iedriverserver.exe");
 				driver = new InternetExplorerDriver();
