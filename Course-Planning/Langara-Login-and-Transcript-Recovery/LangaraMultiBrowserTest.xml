@@ -7,12 +7,18 @@
       <class name="selenium.LangaraLogin"/>
     </classes>
   </test> <!-- Test -->
-    <test name="IETest">
+<!--    <test name="FirefoxTest">
+      <parameter name="browser" value="firefox" />
+    <classes>
+      <class name="selenium.LangaraLogin"/>
+    </classes>
+  </test> Test -->
+   <test name="IETest">
    <parameter name="browser" value="ie" />
     <classes>
       <class name="selenium.LangaraLogin"/>
     </classes>
-  </test> <!-- Test -->
+  </test><!--  Test -->
    <test name="UndefinedBrowser">
    <parameter name="browser" value="UndefinedBrowser" />
     <classes>
