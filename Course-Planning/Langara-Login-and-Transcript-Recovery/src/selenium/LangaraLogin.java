@@ -102,6 +102,7 @@ public class LangaraLogin {
 	    	//<td class="dddefault">CPSC</td>
 	    	driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	    	List<WebElement> courses = driver.findElements(By.className("dddefault"));
+		Assert.assertTrue(courses.size()>0);
 	    	Iterator<WebElement> iter = courses.iterator();
 		// This will check whether list has some element or not
 		while (iter.hasNext()) {
