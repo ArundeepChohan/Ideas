@@ -26,9 +26,9 @@ import org.testng.annotations.Test;
 public class LangaraLogin {
 	WebDriver driver = null;
 	WebDriverWait wait = null;
-    String expectedUrl;
-    String [] actualUrls = {"https://swing.langara.bc.ca/prod/twbkwbis.P_WWWLogin","https://swing.langara.bc.ca/prod/twbkwbis.P_GenMenu?"};
-    @Parameters("browser")
+   	String expectedUrl;
+    	String [] actualUrls = {"https://swing.langara.bc.ca/prod/twbkwbis.P_WWWLogin","https://swing.langara.bc.ca/prod/twbkwbis.P_GenMenu?"};
+    	@Parameters("browser")
 	@BeforeClass
 	public void BeforeClass(String browser) 
 	{
@@ -52,9 +52,9 @@ public class LangaraLogin {
 				System.out.println("The Browser Type is Undefined.");
 				break;
 		}
-	    driver.get(actualUrls[0]);
+	    	driver.get(actualUrls[0]);
 		driver.manage().window().maximize();
-	    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+	    	driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		expectedUrl = driver.getCurrentUrl();
 		Assert.assertTrue(expectedUrl.contains(actualUrls[0])); 
 		//System.out.println("Am I at the login:"+expectedUrl.contains(actualUrls[0]));
@@ -63,11 +63,11 @@ public class LangaraLogin {
 	@Test(priority = 1)
 	public void Login() 
 	{
-	    String userName, passWord;
-	    WebElement username, password, submitBtn;
-	    wait = new WebDriverWait(driver,5);
+	    	String userName, passWord;
+	    	WebElement username, password, submitBtn;
+	    	wait = new WebDriverWait(driver,5);
 		//<input type="text" name="sid" size="11" maxlength="9" id="UserID">
-	    username = wait.until(ExpectedConditions.visibilityOfElementLocated(By.name("sid")));
+	    	username = wait.until(ExpectedConditions.visibilityOfElementLocated(By.name("sid")));
 		//Enter your username and password
 		userName = "";
 		username.clear();
@@ -80,7 +80,7 @@ public class LangaraLogin {
 		//<input type="submit" value="Login">	    
 		submitBtn = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("input[type='submit']")));
 		submitBtn.click();
-	    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+	    	driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		//Added a bit of checking in case you entered the wrong values
 		expectedUrl = driver.getCurrentUrl();
 		Assert.assertTrue(expectedUrl.contains(actualUrls[1]));
@@ -92,22 +92,22 @@ public class LangaraLogin {
 	{
 		//<a href="/prod/twbkwbis.P_GenMenu?name=bmenu.P_StuMainMnu" onmouseover="window.status='Students'; return true" onmouseout="window.status=''; return true" onfocus="window.status='Students'; return true" onblur="window.status=''; return true">Students</a>
 		WebElement students = wait.until(ExpectedConditions.elementToBeClickable(By.linkText("Students")));
-	    students.click();
-	    WebElement studentrecords = wait.until(ExpectedConditions.elementToBeClickable(By.linkText("Student Records")));
-	    studentrecords.click();
-	    WebElement viewyourtranscript = wait.until(ExpectedConditions.elementToBeClickable(By.linkText("View Your Transcript")));
-	    viewyourtranscript.click();
-	    ///html/body/p/table/tbody/tr/td[2]/div[2]/p/table[1]/tbody
-	    //WebElement transcript = driver.findElement(By.xpath("/html/body/p/table/tbody/tr/td[2]/div[2]/p/table[1]/tbody"));
-	    //System.out.println(transcript.getText());
-	    //Would like to pull out the information and store it into a class with Subject, No, Title, Credit, Grade, GPA. Remove the last column as well.
-	    //<td class="dddefault">CPSC</td>
-	    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-	    Screenshot("LangaraTranscripts.png");
-	    List<WebElement> courses = driver.findElements(By.className("dddefault"));
-	    Assert.assertTrue(courses.size()>0);
-	    //System.out.println("Do I have courses: "+(courses.size()>0));
-	    PrintWebElements(courses);
+	    	students.click();
+	    	WebElement studentrecords = wait.until(ExpectedConditions.elementToBeClickable(By.linkText("Student Records")));
+	    	studentrecords.click();
+	    	WebElement viewyourtranscript = wait.until(ExpectedConditions.elementToBeClickable(By.linkText("View Your Transcript")));
+	    	viewyourtranscript.click();
+	    	///html/body/p/table/tbody/tr/td[2]/div[2]/p/table[1]/tbody
+	    	//WebElement transcript = driver.findElement(By.xpath("/html/body/p/table/tbody/tr/td[2]/div[2]/p/table[1]/tbody"));
+	    	//System.out.println(transcript.getText());
+	    	//Would like to pull out the information and store it into a class with Subject, No, Title, Credit, Grade, GPA. Remove the last column as well.
+	    	//<td class="dddefault">CPSC</td>
+	    	driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+	    	Screenshot("LangaraTranscripts.png");
+	    	List<WebElement> courses = driver.findElements(By.className("dddefault"));
+	    	Assert.assertTrue(courses.size()>0);
+	    	//System.out.println("Do I have courses: "+(courses.size()>0));
+	    	PrintWebElements(courses);
 	}
 	@AfterClass
 	public void afterClass()
@@ -116,11 +116,12 @@ public class LangaraLogin {
 	}
 	public void Screenshot(String dest)
 	{   
-	    try {
-	    	TakesScreenshot ts = (TakesScreenshot)driver;
-	 	    File source = ts.getScreenshotAs(OutputType.FILE); 
+	    	try {
+	    		TakesScreenshot ts = (TakesScreenshot)driver;
+	 		File source = ts.getScreenshotAs(OutputType.FILE); 
 			FileHandler.copy(source, new File("./Screenshots/"+dest));
-		} catch (Exception e) {
+		} 
+		catch (Exception e) {
 			// TODO Auto-generated catch block
 			System.out.println("Screen shot fails");
 			e.printStackTrace();
