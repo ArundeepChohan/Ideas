@@ -1,5 +1,13 @@
 # Langara Login
 
+![Screenshot](https://github.com/ArundeepChohan/Summary/blob/master/TestNGResults.png)
+
+![Screenshot](https://github.com/ArundeepChohan/Summary/blob/master/BuildGenerate.png)
+
+![Screenshot](https://github.com/ArundeepChohan/Summary/blob/master/LangaraSetup.png)
+
+![Screenshot](https://github.com/ArundeepChohan/Summary/blob/master/XLSTReport.png)
+
 • It allows the user to sign automatically into Langara using Selenium and retrieve their transcript.
 
 • It allows the user to automatically pull data off the Langara program and courses page.
