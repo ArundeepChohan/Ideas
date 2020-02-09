@@ -26,7 +26,8 @@ Built With: Apache Ant, Java, Maven, Selenium
 
 Authors: Arundeep Chohan
 
-Updates Required:  Going to parse the data into a list of course class with variables Subject, No, Title, Credit, Grade, GPA
+Updates Required:  Going to parse the data into a list of course class with variables Subject, No, Title, Credit, Grade, GPA.
+Log4j causes time out with IE.
 
 Jan 17, 2020: Used knowledge from Udemy Courses to create a Java + Selenium login.
 
