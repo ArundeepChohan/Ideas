@@ -1,0 +1,12 @@
+Run the Xml file.
+Got to test-output.
+Open index.html.
+
+Better reports:
+Use Apache ant.
+Run in command prompt: 
+Cd C:\Users\arund\eclipse-workspace\TestAutomation
+C:\Users\arund\eclipse-workspace\TestAutomation>ant 
+Name of the build.xml method
+C:\Users\arund\eclipse-workspace\TestAutomation>ant generateReport
+Open index.html in testng-xlst folder.

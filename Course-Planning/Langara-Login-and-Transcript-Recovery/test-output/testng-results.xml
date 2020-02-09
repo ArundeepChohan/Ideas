@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="6" passed="4" failed="0" skipped="2">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2020-02-08T20:54:03 PST" name="Suite" finished-at="2020-02-08T20:54:03 PST" duration-ms="0">
+    <groups>
+    </groups>
+  </suite> <!-- Suite -->
+  <suite started-at="2020-02-08T20:52:08 PST" name="Suite (1)" finished-at="2020-02-08T20:54:03 PST" duration-ms="115415">
+    <groups>
+    </groups>
+    <test started-at="2020-02-08T20:52:08 PST" name="Test" finished-at="2020-02-08T20:54:03 PST" duration-ms="115415">
+      <class name="selenium.LangaraProgramRequirements">
+        <test-method is-config="true" signature="BeforeClass()[pri:0, instance:selenium.LangaraProgramRequirements@3e58a80e]" started-at="2020-02-08T20:52:08 PST" name="BeforeClass" finished-at="2020-02-08T20:52:15 PST" duration-ms="7110" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BeforeClass -->
+        <test-method signature="NavigateToRequiredCourses()[pri:1, instance:selenium.LangaraProgramRequirements@3e58a80e]" started-at="2020-02-08T20:52:15 PST" name="NavigateToRequiredCourses" finished-at="2020-02-08T20:52:19 PST" duration-ms="4155" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- NavigateToRequiredCourses -->
+        <test-method signature="PullRequireCourses()[pri:0, instance:selenium.LangaraProgramRequirements@3e58a80e]" started-at="2020-02-08T20:52:19 PST" name="PullRequireCourses" finished-at="2020-02-08T20:54:02 PST" depends-on-methods="selenium.LangaraProgramRequirements.NavigateToRequiredCourses" duration-ms="103333" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- PullRequireCourses -->
+        <test-method is-config="true" signature="AfterClass()[pri:0, instance:selenium.LangaraProgramRequirements@3e58a80e]" started-at="2020-02-08T20:54:02 PST" name="AfterClass" finished-at="2020-02-08T20:54:03 PST" duration-ms="803" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AfterClass -->
+      </class> <!-- selenium.LangaraProgramRequirements -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite (1) -->
+  <suite started-at="2020-02-08T20:46:32 PST" name="Suite (0)" finished-at="2020-02-08T20:52:08 PST" duration-ms="335190">
+    <groups>
+    </groups>
+    <test started-at="2020-02-08T20:46:32 PST" name="GoogleChromeTest" finished-at="2020-02-08T20:47:01 PST" duration-ms="28770">
+      <class name="selenium.LangaraLogin">
+        <test-method is-config="true" signature="BeforeClass(java.lang.String)[pri:0, instance:selenium.LangaraLogin@6a192cfe]" started-at="2020-02-08T20:46:32 PST" name="BeforeClass" finished-at="2020-02-08T20:46:41 PST" duration-ms="8318" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[google chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BeforeClass -->
+        <test-method signature="Login()[pri:1, instance:selenium.LangaraLogin@6a192cfe]" started-at="2020-02-08T20:46:41 PST" name="Login" finished-at="2020-02-08T20:46:42 PST" duration-ms="1582" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Login -->
+        <test-method signature="PullTranscripts()[pri:0, instance:selenium.LangaraLogin@6a192cfe]" started-at="2020-02-08T20:46:42 PST" name="PullTranscripts" finished-at="2020-02-08T20:47:01 PST" depends-on-methods="selenium.LangaraLogin.Login" duration-ms="18666" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- PullTranscripts -->
+        <test-method is-config="true" signature="afterClass()[pri:0, instance:selenium.LangaraLogin@6a192cfe]" started-at="2020-02-08T20:47:01 PST" name="afterClass" finished-at="2020-02-08T20:47:01 PST" duration-ms="116" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterClass -->
+      </class> <!-- selenium.LangaraLogin -->
+    </test> <!-- GoogleChromeTest -->
+    <test started-at="2020-02-08T20:46:32 PST" name="IETest" finished-at="2020-02-08T20:52:08 PST" duration-ms="335189">
+      <class name="selenium.LangaraLogin">
+        <test-method is-config="true" signature="BeforeClass(java.lang.String)[pri:0, instance:selenium.LangaraLogin@74e52303]" started-at="2020-02-08T20:46:32 PST" name="BeforeClass" finished-at="2020-02-08T20:52:08 PST" duration-ms="335038" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[ie]]>
+              </value>
+            </param>
+          </params>
+          <exception class="org.openqa.selenium.TimeoutException">
+            <message>
+              <![CDATA[Timed out waiting for page to load.
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:48'
+System info: host: 'DESKTOP-4O939LH', ip: '192.168.0.13', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '13.0.2'
+Driver info: org.openqa.selenium.ie.InternetExplorerDriver
+Capabilities {acceptInsecureCerts: false, browserName: internet explorer, browserVersion: 11, javascriptEnabled: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:ieOptions: {browserAttachTimeout: 0, elementScrollBehavior: 0, enablePersistentHover: true, ie.browserCommandLineSwitches: , ie.edgechromium: false, ie.edgepath: , ie.ensureCleanSession: false, ie.fileUploadDialogTimeout: 3000, ie.forceCreateProcessApi: false, ignoreProtectedModeSettings: false, ignoreZoomSetting: false, initialBrowserUrl: http://localhost:20384/, nativeEvents: true, requireWindowFocus: false}, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 67846414-1fb8-437a-8daa-d22ba2d938ce]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.TimeoutException: Timed out waiting for page to load.
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:48'
+System info: host: 'DESKTOP-4O939LH', ip: '192.168.0.13', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '13.0.2'
+Driver info: org.openqa.selenium.ie.InternetExplorerDriver
+Capabilities {acceptInsecureCerts: false, browserName: internet explorer, browserVersion: 11, javascriptEnabled: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:ieOptions: {browserAttachTimeout: 0, elementScrollBehavior: 0, enablePersistentHover: true, ie.browserCommandLineSwitches: , ie.edgechromium: false, ie.edgepath: , ie.ensureCleanSession: false, ie.fileUploadDialogTimeout: 3000, ie.forceCreateProcessApi: false, ignoreProtectedModeSettings: false, ignoreZoomSetting: false, initialBrowserUrl: http://localhost:20384/, nativeEvents: true, requireWindowFocus: false}, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 67846414-1fb8-437a-8daa-d22ba2d938ce
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:277)
+at selenium.LangaraLogin.BeforeClass(LangaraLogin.java:58)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:62)
+at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:340)
+at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:294)
+at org.testng.internal.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:176)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:122)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1507)
+at org.testng.TestRunner.privateRun(TestRunner.java:770)
+at org.testng.TestRunner.run(TestRunner.java:591)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:402)
+at org.testng.SuiteRunner.access$000(SuiteRunner.java:41)
+at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:443)
+at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:67)
+at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+at java.base/java.lang.Thread.run(Thread.java:830)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.TimeoutException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BeforeClass -->
+        <test-method signature="Login()[pri:1, instance:selenium.LangaraLogin@74e52303]" started-at="2020-02-08T20:52:08 PST" name="Login" finished-at="2020-02-08T20:52:08 PST" duration-ms="0" status="SKIP">
+          <exception class="org.openqa.selenium.TimeoutException">
+            <message>
+              <![CDATA[Timed out waiting for page to load.
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:48'
+System info: host: 'DESKTOP-4O939LH', ip: '192.168.0.13', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '13.0.2'
+Driver info: org.openqa.selenium.ie.InternetExplorerDriver
+Capabilities {acceptInsecureCerts: false, browserName: internet explorer, browserVersion: 11, javascriptEnabled: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:ieOptions: {browserAttachTimeout: 0, elementScrollBehavior: 0, enablePersistentHover: true, ie.browserCommandLineSwitches: , ie.edgechromium: false, ie.edgepath: , ie.ensureCleanSession: false, ie.fileUploadDialogTimeout: 3000, ie.forceCreateProcessApi: false, ignoreProtectedModeSettings: false, ignoreZoomSetting: false, initialBrowserUrl: http://localhost:20384/, nativeEvents: true, requireWindowFocus: false}, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 67846414-1fb8-437a-8daa-d22ba2d938ce]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.TimeoutException: Timed out waiting for page to load.
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25:48'
+System info: host: 'DESKTOP-4O939LH', ip: '192.168.0.13', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '13.0.2'
+Driver info: org.openqa.selenium.ie.InternetExplorerDriver
+Capabilities {acceptInsecureCerts: false, browserName: internet explorer, browserVersion: 11, javascriptEnabled: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:ieOptions: {browserAttachTimeout: 0, elementScrollBehavior: 0, enablePersistentHover: true, ie.browserCommandLineSwitches: , ie.edgechromium: false, ie.edgepath: , ie.ensureCleanSession: false, ie.fileUploadDialogTimeout: 3000, ie.forceCreateProcessApi: false, ignoreProtectedModeSettings: false, ignoreZoomSetting: false, initialBrowserUrl: http://localhost:20384/, nativeEvents: true, requireWindowFocus: false}, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 67846414-1fb8-437a-8daa-d22ba2d938ce
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:277)
+at selenium.LangaraLogin.BeforeClass(LangaraLogin.java:58)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:62)
+at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:340)
+at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:294)
+at org.testng.internal.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:176)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:122)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1507)
+at org.testng.TestRunner.privateRun(TestRunner.java:770)
+at org.testng.TestRunner.run(TestRunner.java:591)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:402)
+at org.testng.SuiteRunner.access$000(SuiteRunner.java:41)
+at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:443)
+at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:67)
+at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+at java.base/java.lang.Thread.run(Thread.java:830)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.TimeoutException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Login -->
+        <test-method signature="PullTranscripts()[pri:0, instance:selenium.LangaraLogin@74e52303]" started-at="2020-02-08T20:52:08 PST" name="PullTranscripts" finished-at="2020-02-08T20:52:08 PST" depends-on-methods="selenium.LangaraLogin.Login" duration-ms="0" status="SKIP">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method LangaraLogin.PullTranscripts()[pri:0, instance:selenium.LangaraLogin@74e52303] depends on not successfully finished methods]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method LangaraLogin.PullTranscripts()[pri:0, instance:selenium.LangaraLogin@74e52303] depends on not successfully finished methods
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:99)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1507)
+at org.testng.TestRunner.privateRun(TestRunner.java:770)
+at org.testng.TestRunner.run(TestRunner.java:591)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:402)
+at org.testng.SuiteRunner.access$000(SuiteRunner.java:41)
+at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:443)
+at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:67)
+at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+at java.base/java.lang.Thread.run(Thread.java:830)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- PullTranscripts -->
+        <test-method is-config="true" signature="afterClass()[pri:0, instance:selenium.LangaraLogin@74e52303]" started-at="2020-02-08T20:52:08 PST" name="afterClass" finished-at="1969-12-31T16:00:00 PST" duration-ms="-1581223928076" status="SKIP">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterClass -->
+      </class> <!-- selenium.LangaraLogin -->
+    </test> <!-- IETest -->
+  </suite> <!-- Suite (0) -->
+</testng-results>

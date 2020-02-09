@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite parallel="tests" thread-count="5" name="Suite">
+  <test name="GoogleChromeTest">
+   <parameter name="browser" value="google chrome" />
+    <classes>
+      <class name="selenium.LangaraLogin"/>
+    </classes>
+  </test> <!-- Test -->
+<!--    <test name="FirefoxTest">
+      <parameter name="browser" value="firefox" />
+    <classes>
+      <class name="selenium.LangaraLogin"/>
+    </classes>
+  </test> Test -->
+   <test name="IETest">
+   <parameter name="browser" value="ie" />
+    <classes>
+      <class name="selenium.LangaraLogin"/>
+    </classes>
+  </test><!--  Test -->
+   <test name="UndefinedBrowser">
+   <parameter name="browser" value="UndefinedBrowser" />
+    <classes>
+      <class name="selenium.LangaraLogin"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
