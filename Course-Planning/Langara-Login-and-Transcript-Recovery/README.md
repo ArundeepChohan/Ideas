@@ -12,7 +12,7 @@ Prerequisites: Able to run Java + Selenium pages.
 
 Installing: Download all files and click xml-> TestMultipleXmls.xml
 
-Built With: Java, Selenium
+Built With: Apache Ant, Java, Maven, Selenium
 
 Authors: Arundeep Chohan
 
