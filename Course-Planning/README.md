@@ -20,8 +20,3 @@ Uses: Google Api with a key.
 
 Useful if I want to add day planning or travel time around my area.
 ![Screenshot](https://github.com/ArundeepChohan/Summary/blob/master/GoogleApi.png)
-
-Jan 18, 2020: Added Java file to auto login to Langara and pull out the transcript information using Selenium.
-
-Jan 21, 2020: Added multiple browser testing for Selenium. As well as creating required courses file. 
-
