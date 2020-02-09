@@ -1,7 +1,5 @@
 # Langara Login
 
-Login function of the entire app.
-
 • It allows the user to sign automatically into Langara using Selenium and retrieve their transcript.
 
 • It allows the user to automatically pull data off the Langara program and courses page.
@@ -24,4 +22,8 @@ Jan 17, 2020: Used knowledge from Udemy Courses to create a Java + Selenium logi
 
 Jan 21, 2020: Updated multiple browser testing.
 
+Jan 22, 2020: Added pulling off data from Langara course page.
+
 Jan 25, 2020: Full Browser support.
+
+Feb 8, 2020: Added Maven Integration (build.xml), XLST Reports, 
