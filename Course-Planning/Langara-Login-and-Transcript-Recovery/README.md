@@ -1,5 +1,7 @@
 # Langara Login
 
+![Screenshot](https://github.com/ArundeepChohan/Summary/blob/master/LangaraMultiBrowser.png)
+
 ![Screenshot](https://github.com/ArundeepChohan/Summary/blob/master/TestNGResults.png)
 
 ![Screenshot](https://github.com/ArundeepChohan/Summary/blob/master/BuildGenerate.png)
