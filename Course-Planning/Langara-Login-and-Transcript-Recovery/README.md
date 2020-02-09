@@ -3,7 +3,9 @@
 Login function of the entire app.
 
 • It allows the user to sign automatically into Langara using Selenium and retrieve their transcript.
+
 • It allows the user to automatically pull data off the Langara program and courses page.
+
 •  Follows the TestNG framework by using several web drivers (Chrome, Firefox, IE), asserts, expected conditions, and waits in order to verify web page navigation.
 
 • Web elements to focus clicking and to pull data from with built-in functions like find element(s) with using XPath or other identification like their id
