@@ -1,0 +1,4 @@
+Create a new TestNG class and give it a folder name
+Give it a src and package and then Java file
+Right click folder and hit properties
+Add all jars from C:\selenium-java-3.141.59 and C:\selenium-java-3.141.59\libs and click apply

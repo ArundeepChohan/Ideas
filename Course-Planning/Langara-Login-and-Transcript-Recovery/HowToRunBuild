@@ -1,0 +1,3 @@
+cd C:\Users\arund\eclipse-workspace\Langara\
+ant 
+ant generateReport
