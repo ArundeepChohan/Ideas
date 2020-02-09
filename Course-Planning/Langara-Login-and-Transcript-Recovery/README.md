@@ -8,6 +8,8 @@
 
 ![Screenshot](https://github.com/ArundeepChohan/Summary/blob/master/XLSTReport.png)
 
+![Screenshot](https://github.com/ArundeepChohan/Summary/blob/master/LangaraLog.png)
+
 • It allows the user to sign automatically into Langara using Selenium and retrieve their transcript.
 
 • It allows the user to automatically pull data off the Langara program and courses page.
