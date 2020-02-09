@@ -10,7 +10,7 @@ Login function of the entire app.
 
 Prerequisites: Able to run Java + Selenium pages.
 
-Installing: Download entire folder and click on the LangaraLogin.xml and run as NG suite in Eclipse.
+Installing: Download all files and click xml-> TestMultipleXmls.xml
 
 Built With: Java, Selenium
 
