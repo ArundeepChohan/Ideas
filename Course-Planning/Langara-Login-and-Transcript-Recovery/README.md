@@ -39,4 +39,4 @@ Jan 22, 2020: Added pulling off data from Langara course page.
 
 Jan 25, 2020: Full Browser support.
 
-Feb 8, 2020: Added Maven Integration (build.xml), XLST Reports, Apache Ant, Log4j.
+Feb 8, 2020: Added Ant Integration (build.xml), XLST Reports, Apache Ant, Log4j.
