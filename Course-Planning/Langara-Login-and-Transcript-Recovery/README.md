@@ -24,7 +24,7 @@ Prerequisites: Able to run Java + Selenium pages.
 
 Installing: Download all files and click xml-> TestMultipleXmls.xml
 
-Built With: Apache Ant, Java, Selenium
+Built With: Apache Ant, Java, Jenkins, Maven, Selenium
 
 Authors: Arundeep Chohan
 
@@ -39,4 +39,4 @@ Jan 22, 2020: Added pulling off data from Langara course page.
 
 Jan 25, 2020: Full Browser support.
 
-Feb 8, 2020: Added Ant Integration (build.xml), XLST Reports, Apache Ant, Log4j.
+Feb 8, 2020: Added Ant Integration (build.xml) converted from Maven, XLST Reports, Apache Ant, Log4j.
