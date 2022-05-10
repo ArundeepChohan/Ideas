@@ -12,13 +12,11 @@
 
 ![Screenshot](https://github.com/ArundeepChohan/Summary/blob/master/LangaraLog.png)
 
-• It allows the user to sign automatically into Langara using Selenium and retrieve their transcript.
+Signs in automatically into Langara and retrieves their transcript and automatically pull data off the program and courses page then fills out the registration part.
 
-• It allows the user to automatically pull data off the Langara program and courses page.
-
-•  Follows the TestNG framework by using several web drivers (Chrome, Firefox, IE), asserts, expected conditions, and waits in order to verify web page navigation.
-
-• Web elements to focus clicking and to pull data from with built-in functions like find element(s) with using XPath or other identification like their id
+• Tests using several web drivers (Chrome, Firefox, IE), asserts, expected conditions, and waits in order to verify web page navigation. 
+• Clicking web elements to navigate web sites with built-in functions like find element(s) and using XPATH or other identification like their ids.
+• Automated reports and logs.
 
 Prerequisites: Able to run Java + Selenium pages.
 
