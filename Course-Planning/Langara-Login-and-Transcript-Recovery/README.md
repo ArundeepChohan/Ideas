@@ -15,7 +15,9 @@
 Signs in automatically into Langara and retrieves their transcript and automatically pull data off the program and courses page then fills out the registration part.
 
 • Tests using several web drivers (Chrome, Firefox, IE), asserts, expected conditions, and waits in order to verify web page navigation. 
+
 • Clicking web elements to navigate web sites with built-in functions like find element(s) and using XPATH or other identification like their ids.
+
 • Automated reports and logs.
 
 Prerequisites: Able to run Java + Selenium pages.
